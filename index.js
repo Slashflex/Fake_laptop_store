@@ -1,6 +1,6 @@
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 const server = http.createServer(function(req, res){
 
@@ -10,14 +10,14 @@ const server = http.createServer(function(req, res){
             res.end(html);
         });
     } else if (req.url.match("\.css$")) {
-        var cssPath = path.join(__dirname, 'public', req.url);
-        var fileStream = fs.createReadStream(cssPath, "UTF-8");
+        const cssPath = path.join(__dirname, 'public', req.url);
+        const fileStream = fs.createReadStream(cssPath, "UTF-8");
         res.writeHead(200, {"Content-Type": "text/css"});
         fileStream.pipe(res);
 
     } else if (req.url.match("\.jpg$")) {
-        var imagePath = path.join(__dirname, 'public', req.url);
-        var fileStream = fs.createReadStream(imagePath);
+        const imagePath = path.join(__dirname, 'public', req.url);
+        const fileStream = fs.createReadStream(imagePath);
         res.writeHead(200, {"Content-Type": "image/jpg"});
         fileStream.pipe(res);
     } else {
