@@ -53,5 +53,16 @@
         "screen": "15-inch, Full HD",
         "price": "1499",
         "description": "While it may not have the best keyboard in the world, the Samsung Notebook 9 is still one of the best laptops you can buy in 2018. Packed with more horsepower than some MacBook Pros,but at a much lower price, Samsung has crafted a laptop that has just as much substance as it does style. Plus, on top of its killer specs, it’s lightweight and thin, making this one of the most portable 15-inch laptops you can buy today."
+    },
+    {
+        "id": "5",
+        "productName": "HP Spectre x360",
+        "image": "HP-Spectre-x360.jpg",
+        "cpu": "Intel Core i7 7500U",
+        "ram": "16GB",
+        "storage": "512 GB SSD",
+        "screen": "13.3 inches, Full HD",
+        "price": "1,374",
+        "description": "Basically, the HP is known well for the hardware products like – Elite Books and Pro Books. But, the company surprised everyone with its awesome line of laptops which includes gaming as well as other laptops. The product we are reviewing now is HP Spectre x360 which is one of the best laptops on the market right now. Let’s have a look at its features."
     }
 ]
