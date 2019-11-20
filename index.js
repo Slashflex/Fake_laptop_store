@@ -6,79 +6,55 @@ const url = require('url');
 const json = fs.readFileSync(`${__dirname}/data/data.json`, 'utf-8');
 const laptopData = JSON.parse(json);
 
+// SERVER CREATION
 const server = http.createServer((req, res) => {
 
-    const pathName = url.parse(req.url, true).pathname;
+    const pathName = url.parse(req.url, true).pathname;    
     const id = url.parse(req.url, true).query.id; // Read ID from url
 
     //PRODUCTS
     if (pathName === '/products' || pathName === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-
         fs.readFile(`${__dirname}/public/templates/template-overview.html`, 'UTF-8', (err, data) => {
             let overviewOutput = data;
-
             fs.readFile(`${__dirname}/public/templates/template-card.html`, 'UTF-8', (err, data) => {
-                
                 const cardsOutput = laptopData.map(el => replaceTemplate(data, el)).join('');
                 overviewOutput = overviewOutput.replace('{%CARDS%}', cardsOutput);
-                
                 res.end(overviewOutput);
             });
         });
-
     } 
     
     // LAPTOP DETAIL
     else if (pathName === '/laptop' && id < laptopData.length ) {
-
         res.writeHead(200, { 'Content-Type': 'text/html' });
-
         fs.readFile(`${__dirname}/public/templates/template-laptop.html`, 'UTF-8', (err, data) => {
             const laptop = laptopData[id];
             const output = replaceTemplate(data, laptop);
-        
             res.end(output);
         });
-
     } 
     
     // INCLUDE CSS FILE
     else if (pathName.match('\.css$')) {
-
         const cssPath = path.join(__dirname, 'public', pathName);
         const fileStream = fs.createReadStream(cssPath, 'UTF-8');
         res.writeHead(200, { 'Content-Type': 'text/css' });
         fileStream.pipe(res);
-
     } 
     
     // INCLUDE JPG FILES
-    else if (pathName.match('\.jpg$')) {
-
-        const imagePath = path.join(__dirname, './public/img', pathName);
-        const fileStream = fs.createReadStream(imagePath);
-        res.writeHead(200, { 'Content-Type': 'image/jpg' });
-        fileStream.pipe(res);
-
-    } 
-    
-    // INCLUDE PNG FILES
-    else if (pathName.match('\.png$')) {
-
-        const imagePath = path.join(__dirname, './public/img', pathName);
-        const fileStream = fs.createReadStream(imagePath);
-        res.writeHead(200, { 'Content-Type': 'image/png' });
-        fileStream.pipe(res);
-
-    } 
+    else if ((/\.(jpg|jpeg|png|gif)$/i)) {
+        fs.readFile(`${__dirname}/public/img${pathName}`, (err, data) => {
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
     
     // URL NOT FOUND
     else {
-
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.end('No Page Found');
-
     }
 });
 
@@ -87,6 +63,7 @@ server.listen(1337, '127.0.0.1', () => {
     console.log('Listening for requests now');
 });
 
+// REPLACE HTML PLACEHOLDER BY ACTUAL DATAS
 const replaceTemplate = (originalHtml, laptop) => {
     let output = originalHtml.replace(/{%PRODUCTNAME%}/g, laptop.productName);
     output = output.replace(/{%IMAGE%}/g, laptop.image);
