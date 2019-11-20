@@ -7,7 +7,6 @@ h1 {
     font-weight: 400;
     font-size: 6rem;
     color: $color-white;
-    transform: skewY(-5deg);
     margin-bottom: 6rem;
     text-align: center;
     position: relative;
@@ -19,12 +18,12 @@ h1 {
         height: 65%;
         width: 58%;
         position: absolute;
-        top: 105%;
-        left: 50%;
-        background: linear-gradient(to bottom, $color-primary, $color-secondary);
+        top: 45%;
+        left: 49.8%;
+        background: linear-gradient(to bottom, $color-bg, $color-secondary);
         opacity: .8;
         z-index: -1;
-        transform: skewY(370deg) translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 }
 
