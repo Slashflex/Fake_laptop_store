@@ -1,0 +1,121 @@
+body {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1 {
+    font-family: "Bungee Inline", sans-serif;
+    font-weight: 400;
+    font-size: 6rem;
+    color: $color-white;
+    transform: skewY(-5deg);
+    margin-bottom: 6rem;
+    text-align: center;
+    position: relative;
+    word-spacing: 3px;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 65%;
+        width: 58%;
+        position: absolute;
+        top: 105%;
+        left: 50%;
+        background: linear-gradient(to bottom, $color-primary, $color-secondary);
+        opacity: .8;
+        z-index: -1;
+        transform: skewY(370deg) translate(-50%, -50%);
+    }
+}
+
+.card {
+    
+    &__name {
+        font-family: "Bungee Inline", sans-serif;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: center;
+        word-spacing: 1px;
+    }
+
+    &__detail {
+        font-size: 1.6rem;
+    }
+
+    &__price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+
+.laptop {
+
+    &__price {
+        font-size: 3rem;
+        font-family: "Bungee Inline", sans-serif;
+    }
+
+    &__back {
+
+        &:link,
+        &:visited {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+
+    &__name {
+        font-family: "Bungee Inline", sans-serif;
+        font-weight: 400;
+        font-size: 3.25rem;
+        text-align: center;
+        word-spacing: 2px;
+    }
+
+    &__details {
+        font-size: 1.5rem;
+    }
+
+    &__description {
+        font-size: 1.6rem;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+
+    &__source {
+        font-size: 1.2rem;
+    }
+}
+
+.emoji-left {
+    font-size: 2rem;
+}
+
+.emoji-right {
+    font-size: 2rem;
+}

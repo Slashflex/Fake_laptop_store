@@ -1,0 +1,76 @@
+.card {
+    background: $color-white;
+    box-shadow: 0 3rem 6rem 1rem rgba($color-black, 0.25);
+
+    &__hero {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+            opacity: .3;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+    
+    &__name {
+        background: linear-gradient(to right, $color-primary, $color-secondary);
+        padding: 1.3rem .8rem;
+        color: $color-white;
+        margin-bottom: 2rem;
+    }
+
+    &__detail {
+        padding: 1.5rem 3rem;
+        display: flex;
+        align-items: center;
+    
+        &:first-of-type {
+            border-bottom: 1px solid $color-subtle-white;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        margin-top: 1.5rem;
+    }
+    
+    &__price {
+        flex: 0 0 50%;
+        background-color: $color-subtle-white;
+        border-top: 1px solid $color-subtle-white-2;
+        padding: 1.25rem;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            flex: 0 0 50%;
+            background-color: $color-tertiary;
+            color: $color-white;
+            padding: 1.25rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $color-primary;
+        }
+    }
+}
+
+

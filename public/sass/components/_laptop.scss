@@ -1,0 +1,135 @@
+.laptop {
+    width: 70rem;
+    margin: 0 auto;
+    background: $color-white;
+    box-shadow: 0 3rem 6rem 1rem rgba($color-black, 0.25);
+    position: relative;
+
+    &__hero {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+            opacity: .4;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__price {
+        position: absolute;
+        top: -3rem;
+        right: -3rem;
+        z-index: 100;
+        background: linear-gradient(to right bottom, $color-primary, $color-secondary);
+        height: 14rem;
+        width: 14rem;
+        border: 6px solid $color-white;
+        border-radius: 50%;
+        transform: rotate(15deg);
+        box-shadow: 0 2rem 4rem rgba($color-black, 0.4);
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__back {
+
+        &:link,
+        &:visited {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: $color-white;
+            z-index: 1;
+            border: 2px solid $color-white;
+            border-radius: 100rem;
+            padding: 0 2rem;
+            transition: all .3s;
+            display: flex;
+            align-items: center;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $color-white;
+            color: $color-gray;
+        }
+    }
+
+    &__name {
+        background: linear-gradient(to right, $color-primary, $color-secondary);
+        padding: 1.75rem 1rem;
+        color: $color-white;
+    }
+    
+    &__details {
+        background-color: $color-subtle-white;
+        padding: 4rem 6rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.75rem;
+    }
+    
+    &__description {
+        padding: 5rem 6rem;
+        line-height: 1.8;
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            display: block;
+            background-color: $color-tertiary;
+            color: $color-white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $color-primary;
+        }
+    }
+
+    &__source {
+        padding: 0 6rem 3rem;
+        color: $color-gray-light;
+    
+        & a {
+    
+            &:link,
+            &:visited {
+                color: $color-gray-light;
+            }
+    
+            &:hover,
+            &:active {
+                color: $color-gray;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
