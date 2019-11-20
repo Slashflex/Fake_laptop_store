@@ -14,7 +14,7 @@ body {
   line-height: 1.7;
   color: #555;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #67b26f, #4ca2cd); }
+  background-color: #2f2f2f; }
 
 body {
   font-family: "Nunito Sans", sans-serif; }
@@ -24,7 +24,6 @@ h1 {
   font-weight: 400;
   font-size: 6rem;
   color: #fff;
-  transform: skewY(-5deg);
   margin-bottom: 6rem;
   text-align: center;
   position: relative;
@@ -35,12 +34,12 @@ h1 {
     height: 65%;
     width: 58%;
     position: absolute;
-    top: 105%;
-    left: 50%;
-    background: linear-gradient(to bottom, #67b26f, #4ca2cd);
+    top: 45%;
+    left: 49.8%;
+    background: linear-gradient(to bottom, #2f2f2f, #4ca2cd);
     opacity: .8;
     z-index: -1;
-    transform: skewY(370deg) translate(-50%, -50%); }
+    transform: translate(-50%, -50%); }
 
 .card__name {
   font-family: "Bungee Inline", sans-serif;
@@ -85,7 +84,8 @@ h1 {
   font-size: 1.5rem; }
 
 .laptop__description {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  text-align: justify; }
 
 .laptop__link:link, .laptop__link:visited {
   font-size: 1.6rem;
