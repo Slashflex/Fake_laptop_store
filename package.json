@@ -1,6 +1,6 @@
 {
   "name": "laptop-store",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -21,9 +21,7 @@
     "url": "https://github.com/Slashflex/Fake_laptop_store/issues"
   },
   "homepage": "https://github.com/Slashflex/Fake_laptop_store#readme",
-  "dependencies": {
-    "codacy-coverage": "^3.4.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.7.2",
     "concat": "^1.0.3",
