@@ -1,6 +1,6 @@
 {
   "name": "laptop-store",
-  "version": "1.9.67",
+  "version": "1.9.8",
   "description": "",
   "main": "server.js",
   "scripts": {
