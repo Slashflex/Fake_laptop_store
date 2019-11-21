@@ -22,10 +22,8 @@ const replaceTemplate = (originalHtml, laptop) => {
 
 // SERVER CREATION
 const server = http.createServer((req, res) => {
-
     const pathName = url.parse(req.url, true).pathname;    
     const id = url.parse(req.url, true).query.id; // Read ID from url
-
     //PRODUCTS
     if (pathName === "/products" || pathName === "/") {
         res.writeHead(200, { "Content-Type": "text/html" });
@@ -37,9 +35,7 @@ const server = http.createServer((req, res) => {
                 res.end(overviewOutput);
             });
         });
-    } 
-    
-    // LAPTOP DETAIL
+    }// LAPTOP DETAIL
     else if (pathName === "/laptop" && id < laptopData.length ) {
         res.writeHead(200, { "Content-Type": "text/html" });
         fs.readFile(`${__dirname}/public/templates/template-laptop.html`, "UTF-8", (err, data) => {
@@ -47,25 +43,19 @@ const server = http.createServer((req, res) => {
             const output = replaceTemplate(data, laptop);
             res.end(output);
         });
-    } 
-    
-    // INCLUDE CSS FILE
+    }// INCLUDE CSS FILE
     else if (pathName.match("\.css$")) {
         const cssPath = path.join(__dirname, "public", pathName);
         const fileStream = fs.createReadStream(cssPath, "UTF-8");
         res.writeHead(200, { "Content-Type": "text/css" });
         fileStream.pipe(res);
-    } 
-    
-    // INCLUDE JPG FILES
+    }// INCLUDE JPG FILES
     else if ((/\.(jpg|jpeg|png|gif)$/i)) {
         fs.readFile(`${__dirname}/public/img${pathName}`, (err, data) => {
             res.writeHead(200, { "Content-Type": "image/jpg" });
             res.end(data);
         });
-    }
-    
-    // URL NOT FOUND
+    }// URL NOT FOUND
     else {
         res.writeHead(404, { "Content-Type": "text/html" });
         res.end("No Page Found");
