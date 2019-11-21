@@ -1,6 +1,6 @@
 {
   "name": "laptop-store",
-  "version": "1.9.6",
+  "version": "1.9.67",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.comp.css -o public/css/style.prefix.css",
     "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
